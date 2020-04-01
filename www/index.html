@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <title>Blank App</title>
+        <script>
+            window.onload=function()
+            {
+                var out="";
+                out += "Cordova Version: " + device.cordova;
+                out += "<br/>Device Model: " + device.model;
+                out += "<br/>Device Platform: " + device.platform;
+                out += "<br/>UUID: " + device.uuid;
+                out += "<br/>Version: " + device.version;
+                out += "<br/>Manufacturer: " + device.manufacturer;
+                out += "<br/>Serial: " + device.serial;
+                document.getElementById('info_part').innerHTML = out;
+                
+                //Network Information
+                var networkType = navigator.connection.type;
+                var conType = {};
+                conType[Connection.UNKOWN] = "Connection Unknown";
+                conType[Connection.ETHERNET] = "Ethernet";
+                conType[Connection.WIFI] = "wifi";
+                conType[Connection.CELL_2G] = "Cell";
+                conType[Connection.CELL_3G] = "Cell";
+                conType[Connection.CELL_4G] = "Cell";
+                conType[Connection.CELL] = "Cell";
+                conType[Connection.NONE] = "None";
+                document.getElementById('conn_part').innerHTML = "connection through " + conType[networkType];           
+            }
+        </script>
+
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        
+        <style>
+            #footer
+            {
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+            }
+        </style>
+
+    </head>
+    <body>
+        <!-- HOME PAGE -->
+        <div data-role="page" id="home_page">
+            <div data-role="header">
+                <h1>Televic App - Home screen</h1>
+            </div> <!-- header -->
+            <div data-role="main" class="ui-content">
+                <button onclick="location.href='index.html#mic_mgt_page'">Microphone mgt</button>
+                <button onclick="location.href='index.html#config_page'">Configuration</button>
+                <button onclick="location.href='index.html#info_page'">Info</button>
+            </div> <!-- main -->
+            <div data-role="footer" id="footer">
+                <h2>Televic Conference</h2>
+            </div> <!-- footer -->
+        </div> <!-- page -->
+        
+        <!-- CONFIGURATION PAGE -->
+        <div data-role="page" id="config_page">
+            <div data-role="header">
+                <h1>Televic App - Configuration</h1>
+            </div> <!-- header -->
+            <div data-role="main" class="ui-content">
+                <button onclick="location.href='index.html#home_page'">Back to Home screen</button>
+            </div> <!-- main -->
+            <div data-role="footer" id="footer">
+                <h2>Televic Conference</h2>
+            </div> <!-- footer -->
+        </div> <!-- page -->
+
+        <!-- INFO PAGE -->
+        <div data-role="page" id="info_page">
+            <div data-role="header">
+                <h1>Televic App - Info</h1>
+            </div> <!-- header -->
+            <div data-role="main" class="ui-content">
+                <p id=info_part>info part</p>
+                <p id=conn_part>connection part</p>
+                <button onclick="location.href='index.html#home_page'">Back to Home screen</button>
+            </div> <!-- main -->
+            <div data-role="footer" id="footer">
+                <h2>Televic Conference</h2>
+            </div> <!-- footer -->
+        </div> <!-- page -->
+
+        <!-- MICROPHONE MGT PAGE -->
+        <div data-role="page" id="mic_mgt_page">
+            <div data-role="header">
+                <h1>Televic App - Microphone management</h1>
+            </div> <!-- header -->
+            <div data-role="main" class="ui-content">
+                <button onclick="location.href='index.html#home_page'">Back to Home screen</button>
+            </div> <!-- main -->
+            <div data-role="footer" id="footer">
+                <h2>Televic Conference</h2>
+            </div> <!-- footer -->
+        </div> <!-- page -->
+
+        <script type="text/javascript" src="cordova.js"></script>
+    </body>
+</html>

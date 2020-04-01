@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="tv.learntoprogram.uiSamples" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>Televic App</name>
+    <description>
+        Televic systems control app.
+    </description>
+    <author email="support-conference@televic.com" href="http://televic-conference.com">
+        Televic Conference
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+</widget>
